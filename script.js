@@ -55,7 +55,11 @@ if (eventsContainer) {
             card.innerHTML = `
                 <img src="${event.img}" class="event-poster">
                 <h3>${event.title}</h3>
-                <p class="event-date">${event.date}</p>
+                <p class="event-date">${event.date.toLocaleDateString('fr-FR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                })}</p>
                 <button class="card-btn">+ d'infos</button>
             `;
             eventsContainer.appendChild(card);
