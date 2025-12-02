@@ -101,11 +101,22 @@ fetch('events.json')
     // Prendre le plus proche
     const nextEvent = futureEvents[0];
 
-    // Afficher dans la section
-    prochainEventSection.innerHTML = `
-        <h2>Prochain événement</h2>
-        <p>${nextEvent.title} le ${new Date(nextEvent.date).toLocaleDateString('fr-FR', {day: '2-digit', month: 'long', year: 'numeric'})}. ${nextEvent.desc}</p>
+   prochainEventSection.innerHTML = `
+        <div class="event-card-prochain">
+            <img src="${nextEvent.img}" alt="${nextEvent.title}" class="event-poster-prochain">
+            <div class="event-info-prochain">
+                <h3>${nextEvent.title}</h3>
+                <p class="event-date-prochain">${new Date(nextEvent.date).toLocaleDateString('fr-FR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                })}</p>
+                <p>${nextEvent.desc}</p>
+                <button class="card-btn" onclick="window.location.href='evenement.html'">En savoir plus</button>
+            </div>
+        </div>
     `;
+
   })
   .catch(err => {
     console.error("Erreur chargement events.json :", err);
