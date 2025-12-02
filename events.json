@@ -4,8 +4,7 @@
     "date": "12 Décembre 2025",
     "category": "Solidarité",
     "duration": "3h",
-    "stars": "4.7",
-    "img": "img/event1.jpg",
+    "img": "img/affiche1.png",
     "desc": "Un gala exceptionnel visant à récolter des fonds pour nos actions solidaires. Concerts, animations, invités spéciaux..."
   },
   {
@@ -13,8 +12,7 @@
     "date": "Octobre 2025",
     "category": "Santé & Bien-être",
     "duration": "2h",
-    "stars": "4.9",
-    "img": "img/event2.jpg",
+    "img": "img/affiche1.png",
     "desc": "Une conférence destinée à sensibiliser au bien-être mental et physique, avec des professionnels du domaine."
   },
   {
@@ -22,8 +20,7 @@
     "date": "Mai 2025",
     "category": "Prévention",
     "duration": "1h30",
-    "stars": "4.5",
-    "img": "img/event3.jpg",
+    "img": "img/affiche1.png",
     "desc": "Atelier de sensibilisation ouvert à tous : alimentation, sommeil, gestion du stress, activités pratiques..."
   }
 ]
