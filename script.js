@@ -55,7 +55,7 @@ if (eventsContainer) {
             card.innerHTML = `
                 <img src="${event.img}" class="event-poster">
                 <h3>${event.title}</h3>
-                <p class="event-date">${event.date.toLocaleDateString('fr-FR', {
+                <p class="event-date">${new Date(event.date).toLocaleDateString('fr-FR', {
                     day: '2-digit',
                     month: 'long',
                     year: 'numeric'
