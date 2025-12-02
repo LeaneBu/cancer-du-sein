@@ -34,34 +34,48 @@ setInterval(() => {
 showSlide(currentSlide);
 
 
-// --- DATA DES ÉVÈNEMENTS ---
-const events = [
-    {
-        title: "Gala Caritatif",
-        date: "12 Décembre 2025",
-        img: "img/event1.jpg",
-        desc: "Un gala exceptionnel visant à récolter des fonds pour nos actions solidaires. Concerts, animations, invités spéciaux..."
-    },
-    {
-        title: "Conférence Bien-Être",
-        date: "Octobre 2025",
-        img: "img/event2.jpg",
-        desc: "Une conférence destinée à sensibiliser au bien-être mental et physique, avec des professionnels du domaine."
-    },
-    {
-        title: "Atelier Prévention",
-        date: "Mai 2025",
-        img: "img/event3.jpg",
-        desc: "Atelier de sensibilisation ouvert à tous : alimentation, sommeil, gestion du stress, activités pratiques..."
-    }
-];
+// --- CHARGER LES ÉVÈNEMENTS DEPUIS JSON ---
+let events = [];
 
-// --- POPUP ---
+fetch('events.json')
+  .then(response => response.json())
+  .then(data => {
+    events = data;
+    renderEvents();
+  })
+  .catch(err => console.error("Erreur chargement JSON:", err));
+
+// --- GENERER LES CARTES ---
+function renderEvents() {
+    const container = document.getElementById("events-container");
+    container.innerHTML = ""; // vide avant ajout
+
+    events.forEach((event, i) => {
+        const card = document.createElement("div");
+        card.className = "event-card";
+        card.onclick = () => openEvent(i);
+
+        card.innerHTML = `
+            <img src="${event.img}" class="event-poster">
+            <h3>${event.title}</h3>
+            <p class="event-date">${event.date}</p>
+            <button class="card-btn">+ d'infos</button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// --- OUVRIR LA POPUP STYLE ALLOCINÉ ---
 function openEvent(i) {
-    document.getElementById("popup-title").innerText = events[i].title;
-    document.getElementById("popup-date").innerText = events[i].date;
-    document.getElementById("popup-desc").innerText = events[i].desc;
-    document.getElementById("popup-img").src = events[i].img;
+    const event = events[i];
+    document.getElementById("popup-title").innerText = event.title;
+    document.getElementById("popup-date").innerText = event.date;
+    document.getElementById("popup-category").innerText = event.category;
+    document.getElementById("popup-duration").innerText = event.duration;
+    document.getElementById("popup-stars").innerText = event.stars;
+    document.getElementById("popup-desc").innerText = event.desc;
+    document.getElementById("popup-img").src = event.img;
 
     document.getElementById("event-popup").style.display = "flex";
 }
@@ -69,3 +83,5 @@ function openEvent(i) {
 function closeEvent() {
     document.getElementById("event-popup").style.display = "none";
 }
+
+

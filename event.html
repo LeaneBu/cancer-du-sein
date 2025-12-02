@@ -21,45 +21,44 @@
 
 <div class="banner" style="background-image:url('img/banner-evenement.jpg')"></div>
 
-<section class="events-grid">
-    <!-- EVENT 1 -->
-    <div class="event-card" onclick="openEvent(0)">
-        <img src="img/event1.jpg" class="event-poster">
-        <h3>Gala Caritatif</h3>
-        <p class="event-date">12 Décembre 2025</p>
-        <button class="card-btn">+ d'infos</button>
-    </div>
-
-    <!-- EVENT 2 -->
-    <div class="event-card" onclick="openEvent(1)">
-        <img src="img/event2.jpg" class="event-poster">
-        <h3>Conférence Bien-Être</h3>
-        <p class="event-date">Octobre 2025</p>
-        <button class="card-btn">+ d'infos</button>
-    </div>
-
-    <!-- EVENT 3 -->
-    <div class="event-card" onclick="openEvent(2)">
-        <img src="img/event3.jpg" class="event-poster">
-        <h3>Atelier Prévention</h3>
-        <p class="event-date">Mai 2025</p>
-        <button class="card-btn">+ d'infos</button>
-    </div>
+<section class="events-grid" id="events-container">
 
 </section>
 
 <!-- POPUP STYLE ALLOCINÉ -->
+<!-- POPUP ALLOCINÉ -->
 <div id="event-popup" class="popup-overlay">
-    <div class="popup-content">
+    <div class="popup-content-allocine">
+
         <span class="popup-close" onclick="closeEvent()">✖</span>
-        <img id="popup-img" src="" class="popup-img">
-        <div class="popup-text">
-            <h2 id="popup-title"></h2>
-            <p id="popup-date"></p>
-            <p id="popup-desc"></p>
+
+        <!-- Affiche -->
+        <div class="popup-left">
+            <img id="popup-img" src="" class="popup-img-allocine">
         </div>
+
+        <!-- Informations -->
+        <div class="popup-right">
+            <h1 id="popup-title"></h1>
+
+            <div class="popup-meta">
+                <span id="popup-date"></span> • 
+                <span id="popup-category"></span> • 
+                <span id="popup-duration"></span>
+            </div>
+
+            <div class="popup-buttons">
+                <button class="popup-btn">Partager</button>
+            </div>
+
+            <h3>Synopsis</h3>
+            <p id="popup-desc"></p>
+
+        </div>
+
     </div>
 </div>
+
 
 <footer>
     <img src="img/logo.png">
