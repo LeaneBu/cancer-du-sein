@@ -94,12 +94,68 @@ nav a:hover {
 /* --- ACCUEIL : prochain événement --- */
 .prochain-event {
     padding: 80px 40px;
-    background: white;
-    text-align: center;
+    background: #f5f5f5;
 }
 
-.prochain-event h2 {
-    margin-bottom: 20px;
+.event-card-prochain {
+    display: flex;
+    gap: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.event-card-prochain:hover {
+    transform: scale(1.02);
+}
+
+.event-poster-prochain {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.event-info-prochain {
+    flex: 1;
+}
+
+.event-info-prochain h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.event-date-prochain {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.event-info-prochain p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-btn {
+    padding: 8px 16px;
+    background: #ffdd55;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: #e6c44d;
 }
 
 /* --- CARROUSEL --- */
