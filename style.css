@@ -60,7 +60,6 @@ nav a:hover {
     align-items: center;
     overflow: hidden;
     position: relative;
-    margin-top: 70px;
 }
 
 .banner img {
@@ -109,7 +108,6 @@ nav a:hover {
     width: 100%;
     height: 400px;
     overflow: hidden;
-    margin-top: 10px;
 }
 
 .carousel img {
