@@ -112,7 +112,7 @@ fetch('events.json')
                     year: 'numeric'
                 })}</p>
                 <p>${nextEvent.desc}</p>
-                <button class="card-btn" onclick="window.location.href='evenement.html'">En savoir plus</button>
+                <button class="card-btn" onclick="window.location.href='event.html'">En savoir plus</button>
             </div>
         </div>
     `;
