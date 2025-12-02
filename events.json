@@ -1,7 +1,7 @@
 [
   {
     "title": "Gala Caritatif",
-    "date": "12 Décembre 2025",
+    "date": "2025-12-12",
     "category": "Solidarité",
     "duration": "3h",
     "img": "img/affiche1.png",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Conférence Bien-Être",
-    "date": "Octobre 2025",
+    "date": "2025-12-01",
     "category": "Santé & Bien-être",
     "duration": "2h",
     "img": "img/affiche2.png",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Atelier Prévention",
-    "date": "Mai 2025",
+    "date": "2026-10-16",
     "category": "Prévention",
     "duration": "1h30",
     "img": "img/affiche3.png",

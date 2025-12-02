@@ -80,4 +80,35 @@ if (eventsContainer) {
     }
 }
 
+const prochainEventSection = document.querySelector('.prochain-event');
+
+fetch('events.json')
+  .then(response => response.json())
+  .then(events => {
+    const today = new Date();
+
+    // Filtrer les événements futurs
+    const futureEvents = events.filter(e => new Date(e.date) > today);
+
+    if(futureEvents.length === 0) {
+        prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Aucun événement à venir pour le moment.</p>";
+        return;
+    }
+
+    // Trier par date croissante
+    futureEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Prendre le plus proche
+    const nextEvent = futureEvents[0];
+
+    // Afficher dans la section
+    prochainEventSection.innerHTML = `
+        <h2>Prochain événement</h2>
+        <p>${nextEvent.title} le ${new Date(nextEvent.date).toLocaleDateString('fr-FR')}. ${nextEvent.desc}</p>
+    `;
+  })
+  .catch(err => {
+    console.error("Erreur chargement events.json :", err);
+    prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Impossible de charger les événements.</p>";
+  });
 
