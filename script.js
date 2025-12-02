@@ -104,7 +104,7 @@ fetch('events.json')
     // Afficher dans la section
     prochainEventSection.innerHTML = `
         <h2>Prochain événement</h2>
-        <p>${nextEvent.title} le ${new Date(nextEvent.date).toLocaleDateString('fr-FR')}. ${nextEvent.desc}</p>
+        <p>${nextEvent.title} le ${new Date(nextEvent.date).toLocaleDateString('fr-FR', {day: '2-digit', month: 'long', year: 'numeric'})}. ${nextEvent.desc}</p>
     `;
   })
   .catch(err => {
