@@ -32,3 +32,40 @@ setInterval(() => {
 
 // afficher le premier slide
 showSlide(currentSlide);
+
+
+// --- DATA DES ÉVÈNEMENTS ---
+const events = [
+    {
+        title: "Gala Caritatif",
+        date: "12 Décembre 2025",
+        img: "img/event1.jpg",
+        desc: "Un gala exceptionnel visant à récolter des fonds pour nos actions solidaires. Concerts, animations, invités spéciaux..."
+    },
+    {
+        title: "Conférence Bien-Être",
+        date: "Octobre 2025",
+        img: "img/event2.jpg",
+        desc: "Une conférence destinée à sensibiliser au bien-être mental et physique, avec des professionnels du domaine."
+    },
+    {
+        title: "Atelier Prévention",
+        date: "Mai 2025",
+        img: "img/event3.jpg",
+        desc: "Atelier de sensibilisation ouvert à tous : alimentation, sommeil, gestion du stress, activités pratiques..."
+    }
+];
+
+// --- POPUP ---
+function openEvent(i) {
+    document.getElementById("popup-title").innerText = events[i].title;
+    document.getElementById("popup-date").innerText = events[i].date;
+    document.getElementById("popup-desc").innerText = events[i].desc;
+    document.getElementById("popup-img").src = events[i].img;
+
+    document.getElementById("event-popup").style.display = "flex";
+}
+
+function closeEvent() {
+    document.getElementById("event-popup").style.display = "none";
+}
