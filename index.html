@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Accueil</title>
 </head>
 <body>
@@ -12,21 +13,41 @@
     <img src="img/logo.png" alt="logo">
     <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="evenement.html">Évènements</a></li>
-        <li><a href="prevention.html">Prévention</a></li>
-        <li><a href="association.html">Association</a></li>
+        <li><a href="event.html">Évènements</a></li>
+        <li><a href="prevent.html">Prévention</a></li>
+        <li><a href="assos.html">Association</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
-<!-- HERO -->
-<div class="banner" style="background-image:url('img/banner-accueil.jpg')">
-    <div class="btn-container">
-        <button onclick="location.href='event.html'">Voir les évènements</button>
-        <button onclick="location.href='prevent.html'">Prévention</button>
-        <button onclick="location.href='assos.html'">Association</button>
-        <button onclick="location.href='contact.html'">Contact</button>
+<!-- CARROUSEL -->
+<div class="carousel">
+
+    <!-- SLIDE 1 -->
+    <div class="slide active" style="background-image: url('img/banner-accueil.jpg');">
+        <button onclick="location.href='event.html'" class="slide-btn">
+            Voir les évènements
+        </button>
     </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" style="background-image: url('img/banner-prevention.jpg');">
+        <button onclick="location.href='prevent.html'" class="slide-btn">
+            Prévention & sensibilisation
+        </button>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" style="background-image: url('img/banner-association.jpg');">
+        <button onclick="location.href='assos.html'" class="slide-btn">
+            Notre association
+        </button>
+    </div>
+
+    <!-- FLÈCHES -->
+    <div class="arrow left" onclick="changeSlide(-1)">❮</div>
+    <div class="arrow right" onclick="changeSlide(1)">❯</div>
+
 </div>
 
 <!-- PROCHAIN ÉVÈNEMENT -->
