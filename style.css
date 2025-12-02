@@ -1,0 +1,181 @@
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+nav img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffdd55;
+}
+
+/* --- HERO / BANNIÈRE --- */
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .btn-container {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.banner button {
+    padding: 12px 25px;
+    border: none;
+    background: #ffdd55;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.banner button:hover {
+    background: #e6c44d;
+}
+
+/* --- ACCUEIL : prochain événement --- */
+.prochain-event {
+    padding: 80px 40px;
+    background: white;
+    text-align: center;
+}
+
+.prochain-event h2 {
+    margin-bottom: 20px;
+}
+
+/* --- PAGE ÉVÈNEMENTS --- */
+.event-container {
+    padding: 120px 40px;
+}
+
+.event {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.event img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.event-desc {
+    margin-top: 10px;
+    display: none;
+}
+
+.arrow {
+    margin-left: auto;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.arrow.open {
+    transform: rotate(90deg);
+}
+
+/* --- SECTIONS GÉNÉRIQUES --- */
+.section {
+    padding: 120px 40px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.section img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- CONTACT --- */
+.contact-container {
+    padding: 120px 40px;
+}
+
+.contact-item {
+    margin-bottom: 25px;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 150px;
+    padding: 40px;
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer img {
+    height: 50px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
