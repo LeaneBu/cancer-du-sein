@@ -70,7 +70,7 @@ if (eventsContainer) {
     function openEvent(i) {
         const event = events[i];
         document.getElementById("popup-title").innerText = event.title;
-        document.getElementById("popup-date").innerText = event.date;
+        document.getElementById("popup-date").innerText = new Date(event.date).toLocaleDateString('fr-FR');
         document.getElementById("popup-category").innerText = event.category;
         document.getElementById("popup-duration").innerText = event.duration;
         document.getElementById("popup-desc").innerText = event.desc;
