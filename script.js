@@ -69,7 +69,6 @@ if (eventsContainer) {
         document.getElementById("popup-date").innerText = event.date;
         document.getElementById("popup-category").innerText = event.category;
         document.getElementById("popup-duration").innerText = event.duration;
-        document.getElementById("popup-stars").innerText = event.stars;
         document.getElementById("popup-desc").innerText = event.desc;
         document.getElementById("popup-img").src = event.img;
 
