@@ -117,14 +117,15 @@ nav a:hover {
 
 .banner-text h2 {
     margin: 0;
-    font-size: 48px;
+    font-size: clamp(24px, 5vw, 64px);
 }
 
 .banner-text p {
     margin-top: 10px;
-    font-size: 18px;
-    max-width: 500px;
+    font-size: clamp(14px, 2vw, 24px);
+    max-width: 80vw;
 }
+
 
 /* --- ACCUEIL : prochain événement --- */
 .prochain-event {
