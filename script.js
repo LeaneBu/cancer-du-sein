@@ -124,23 +124,23 @@ if (prochainEventSection) {
 document.addEventListener('DOMContentLoaded', () => {
     const intervenantsGrid = document.getElementById("intervenants-grid");
 
-    if(!intervenantsGrid) return; // sécurité
-
     fetch('intervenants.json')
         .then(res => res.json())
         .then(data => {
-            // Trier par profession
             const professions = {};
-            data.forEach(intervenant => {
-                if (!professions[intervenant.profession]) professions[intervenant.profession] = [];
-                professions[intervenant.profession].push(intervenant);
+            data.forEach(person => {
+                if (!professions[person.profession]) professions[person.profession] = [];
+                professions[person.profession].push(person);
             });
 
-            // Générer HTML par profession
             for (const prof in professions) {
-                const sectionTitle = document.createElement("h3");
-                sectionTitle.textContent = prof;
-                intervenantsGrid.appendChild(sectionTitle);
+                const catTitle = document.createElement("div");
+                catTitle.className = "intervenant-category";
+                catTitle.textContent = prof;
+                intervenantsGrid.appendChild(catTitle);
+
+                const cardsContainer = document.createElement("div");
+                cardsContainer.className = "intervenant-cards";
 
                 professions[prof].forEach(person => {
                     const card = document.createElement("div");
@@ -154,9 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>Téléphone: <a href="tel:${person.phone}">${person.phone}</a></p>
                         </div>
                     `;
-                    intervenantsGrid.appendChild(card);
+                    cardsContainer.appendChild(card);
                 });
+
+                intervenantsGrid.appendChild(cardsContainer);
             }
         })
         .catch(err => console.error("Erreur chargement JSON:", err));
 });
+
