@@ -14,15 +14,9 @@ const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
 function showSlide(index) {
-    slides.forEach((s, i) => {
-        if(i === index) {
-            s.style.display = "flex";
-        } else {
-            s.style.display = "none";
-        }
-    });
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
 }
-
 
 function changeSlide(direction) {
     currentSlide += direction;
