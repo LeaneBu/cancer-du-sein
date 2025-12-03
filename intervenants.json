@@ -2,28 +2,28 @@
     {
         "name": "Jean Dupont",
         "profession": "Conférencier",
-        "photo": "photo_inter/pp.png",
+        "photo": "img/photo_inter/pp.png",
         "email": "jean.dupont@example.com",
         "phone": "06 12 34 56 78"
     },
     {
         "name": "Marie Martin",
         "profession": "Psychologue",
-        "photo": "photo_inter/pp.png",
+        "photo": "img/photo_inter/pp.png",
         "email": "marie.martin@example.com",
         "phone": "06 23 45 67 89"
     },
     {
         "name": "Lucas Bernard",
         "profession": "Coordinateur",
-        "photo": "photo_inter/pp.png",
+        "photo": "img/photo_inter/pp.png",
         "email": "lucas.bernard@example.com",
         "phone": "06 34 56 78 90"
     },
     {
         "name": "Sophie Leroy",
         "profession": "Psychologue",
-        "photo": "photo_inter/pp.png",
+        "photo": "img/photo_inter/pp.png",
         "email": "sophie.leroy@example.com",
         "phone": "06 45 67 89 01"
     }
