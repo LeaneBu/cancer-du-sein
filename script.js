@@ -26,12 +26,15 @@ if (slides.length > 0) {
         showSlide(currentSlide);
     }
 
-    setInterval(() => { changeSlide(1); }, 5000);
+    // --- Intervalle auto-slide ---
+    const slideInterval = setInterval(() => { changeSlide(1); }, 5000);
+
+    // --- Arrêter l’auto-slide si on clique sur un lien ---
     slides.forEach(slide => {
         const btn = slide.querySelector('.slide-btn');
         if (btn) {
             btn.addEventListener('click', () => {
-                clearInterval(slideInterval); // stop l'auto-slide si nécessaire
+                clearInterval(slideInterval);
             });
         }
     });
