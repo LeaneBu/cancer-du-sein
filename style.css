@@ -80,6 +80,9 @@ nav a:hover {
     align-items: center;
     overflow: hidden;
     position: relative;
+    justify-content: flex-start;  /* alignement horizontal à gauche */
+    align-items: center;          /* centrage vertical */
+    padding-left: 50px; 
 }
 
 .banner img {
