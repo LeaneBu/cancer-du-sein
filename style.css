@@ -463,6 +463,69 @@ nav a:hover {
     font-size: 20px;
 }
 
+/* ---- Zones alternées texte / image ---- */
+
+.prev-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    gap: 40px;
+}
+
+.prev-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.prev-text {
+    flex: 1;
+}
+
+.prev-img {
+    flex: 1;
+}
+
+.prev-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* ---- Ligne des 3 audios ---- */
+
+.audio-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    gap: 20px;
+}
+
+.audio-item {
+    width: 30%;
+    text-align: center;
+}
+
+.audio-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* ---- Vidéo ---- */
+
+.video-container {
+    margin: 40px auto;
+    width: 80%;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
 
 /* --- SECTIONS GÉNÉRIQUES --- */
 .section {
