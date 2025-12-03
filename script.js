@@ -11,24 +11,25 @@ document.querySelectorAll(".event-header").forEach(header => {
 
 // --- CARROUSEL (index.html) ---
 const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+if (slides.length > 0) {
+    let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach(s => s.classList.remove("active"));
-    slides[index].classList.add("active");
-}
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[index].classList.add("active");
+    }
 
-function changeSlide(direction) {
-    currentSlide += direction;
-    if (currentSlide >= slides.length) currentSlide = 0;
-    if (currentSlide < 0) currentSlide = slides.length - 1;
+    function changeSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        showSlide(currentSlide);
+    }
+
+    const slideInterval = setInterval(() => { changeSlide(1); }, 5000);
+    window.changeSlide = changeSlide;
     showSlide(currentSlide);
 }
-
-const slideInterval = setInterval(() => { changeSlide(1); }, 5000);
-window.changeSlide = changeSlide;
-showSlide(currentSlide);
-
 
 // --- ÉVÉNEMENTS (evenement.html) ---
 const eventsContainer = document.getElementById("events-container");
