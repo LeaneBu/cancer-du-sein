@@ -637,8 +637,8 @@ video {
 }
 
 .intervenant-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -650,7 +650,22 @@ video {
     gap: 15px;
     padding: 15px;
     align-items: center;
+    width: calc(33.333% - 13.33px); /* 1/3 de la largeur - gap */
+    box-sizing: border-box;
 }
+
+@media (max-width: 900px) {
+    .intervenant-card {
+        width: calc(50% - 10px); /* 2 colonnes sur petit écran */
+    }
+}
+
+@media (max-width: 600px) {
+    .intervenant-card {
+        width: 100%; /* 1 colonne sur très petit écran */
+    }
+}
+
 
 .intervenant-card img {
     width: 80px;
