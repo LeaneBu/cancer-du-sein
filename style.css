@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 
-/*html, body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-}*/
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -20,11 +20,14 @@ body {
 }
 
 main {
+    flex: 1;
+}
+
+#wrapper{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;          
     padding: 0 40px;
-    /*flex: 1;   */
 }
 
 /* --- NAVIGATION --- */

@@ -19,45 +19,47 @@
     </ul>
 </nav>
 
-<div class="banner" style="background-image:url('img/ban-eve.png')"></div>
 
 <main>
-<section class="events-grid" id="events-container">
+    <div class="banner" style="background-image:url('img/ban-eve.png')"></div>
+    <div id="wrapper">
+        <section class="events-grid" id="events-container">
+            <!--généré en JS-->
+        </section>
 
-</section>
+        <!-- POPUP ALLOCINÉ -->
+        <div id="event-popup" class="popup-overlay">
+            <div class="popup-content-allocine">
 
-<!-- POPUP ALLOCINÉ -->
-<div id="event-popup" class="popup-overlay">
-    <div class="popup-content-allocine">
+                <span class="popup-close" onclick="closeEvent()">✖</span>
 
-        <span class="popup-close" onclick="closeEvent()">✖</span>
+                <!-- Affiche -->
+                <div class="popup-left">
+                    <img id="popup-img" src="" class="popup-img-allocine">
+                </div>
 
-        <!-- Affiche -->
-        <div class="popup-left">
-            <img id="popup-img" src="" class="popup-img-allocine">
-        </div>
+                <!-- Informations -->
+                <div class="popup-right">
+                    <h1 id="popup-title"></h1>
 
-        <!-- Informations -->
-        <div class="popup-right">
-            <h1 id="popup-title"></h1>
+                    <div class="popup-meta">
+                        <span id="popup-date"></span> • 
+                        <span id="popup-category"></span> • 
+                        <span id="popup-duration"></span>
+                    </div>
 
-            <div class="popup-meta">
-                <span id="popup-date"></span> • 
-                <span id="popup-category"></span> • 
-                <span id="popup-duration"></span>
+                    <div class="popup-buttons">
+                        <button class="popup-btn">Partager</button>
+                    </div>
+
+                    <h3>Description</h3>
+                    <p id="popup-desc"></p>
+
+                </div>
+
             </div>
-
-            <div class="popup-buttons">
-                <button class="popup-btn">Partager</button>
-            </div>
-
-            <h3>Description</h3>
-            <p id="popup-desc"></p>
-
         </div>
-
     </div>
-</div>
 </main>
 
 <footer>
