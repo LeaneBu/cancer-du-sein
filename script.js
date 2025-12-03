@@ -84,29 +84,25 @@ if (eventsContainer) {
 
 const prochainEventSection = document.querySelector('.prochain-event');
 
-fetch('events.json')
-  .then(response => response.json())
-  .then(events => {
-    const today = new Date();
+if (prochainEventSection) {
+    fetch('events.json')
+      .then(response => response.json())
+      .then(events => {
+          const today = new Date();
+          const futureEvents = events.filter(e => new Date(e.date) > today);
 
-    // Filtrer les événements futurs
-    const futureEvents = events.filter(e => new Date(e.date) > today);
+          if(futureEvents.length === 0) {
+              prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Aucun événement à venir pour le moment.</p>";
+              return;
+          }
 
-    if(futureEvents.length === 0) {
-        prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Aucun événement à venir pour le moment.</p>";
-        return;
-    }
+          futureEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+          const nextEvent = futureEvents[0];
 
-    // Trier par date croissante
-    futureEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    // Prendre le plus proche
-    const nextEvent = futureEvents[0];
-
-   prochainEventSection.innerHTML = `
-        <div class="event-card-prochain">
-            <img src="${nextEvent.img}" alt="${nextEvent.title}" class="event-poster-prochain">
-            <div class="event-info-prochain">
+          prochainEventSection.innerHTML = `
+            <div class="event-card-prochain">
+              <img src="${nextEvent.img}" alt="${nextEvent.title}" class="event-poster-prochain">
+              <div class="event-info-prochain">
                 <h3>${nextEvent.title}</h3>
                 <p class="event-date-prochain">${new Date(nextEvent.date).toLocaleDateString('fr-FR', {
                     day: '2-digit',
@@ -115,13 +111,13 @@ fetch('events.json')
                 })}</p>
                 <p>${nextEvent.desc}</p>
                 <button class="card-btn" onclick="window.location.href='event.html'">En savoir plus</button>
+              </div>
             </div>
-        </div>
-    `;
-
-  })
-  .catch(err => {
-    console.error("Erreur chargement events.json :", err);
-    prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Impossible de charger les événements.</p>";
-  });
+          `;
+      })
+      .catch(err => {
+          console.error("Erreur chargement events.json :", err);
+          prochainEventSection.innerHTML = "<h2>Prochain événement</h2><p>Impossible de charger les événements.</p>";
+      });
+}
 
