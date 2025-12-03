@@ -112,6 +112,17 @@ nav a:hover {
     background: #e6c44d;
 }
 
+.banner-text h2 {
+    margin: 0;
+    font-size: 48px;
+}
+
+.banner-text p {
+    margin-top: 10px;
+    font-size: 18px;
+    max-width: 500px;
+}
+
 /* --- ACCUEIL : prochain événement --- */
 .prochain-event {
     padding: 80px 40px;
