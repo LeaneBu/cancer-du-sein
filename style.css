@@ -468,9 +468,11 @@ nav a:hover {
 .prev-block {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 40px 0;
-    gap: 40px;
+    justify-content: center;
+    gap: 50px;
+    margin: 60px auto;
+    max-width: 1100px;          /* réduit la largeur générale pour équilibrer */
+    padding: 20px 0;
 }
 
 .prev-block.reverse {
@@ -478,16 +480,21 @@ nav a:hover {
 }
 
 .prev-text {
-    flex: 1;
+    flex: 1.2;                  /* le texte devient un peu plus dominant */
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .prev-img {
-    flex: 1;
+    flex: 1;                    /* images un peu plus petites pour adoucir */
 }
 
 .prev-img img {
     width: 100%;
-    border-radius: 10px;
+    max-height: 320px;          /* limite la hauteur */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);  /* visuel plus doux */
 }
 
 
@@ -495,14 +502,25 @@ nav a:hover {
 
 .audio-row {
     display: flex;
-    justify-content: space-between;
-    margin: 50px 0;
-    gap: 20px;
+    justify-content: center;
+    gap: 35px;
+    margin: 60px auto;
+    max-width: 1100px;          /* cohérent avec prévention */
 }
 
 .audio-item {
-    width: 30%;
+    flex: 1;
+    max-width: 300px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+    transition: transform .2s;
+}
+
+.audio-item:hover {
+    transform: translateY(-4px);
 }
 
 .audio-item img {
@@ -510,7 +528,6 @@ nav a:hover {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
 
 /* ---- Vidéo ---- */
 
