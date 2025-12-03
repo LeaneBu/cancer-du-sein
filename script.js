@@ -27,6 +27,15 @@ if (slides.length > 0) {
     }
 
     setInterval(() => { changeSlide(1); }, 5000);
+    slides.forEach(slide => {
+        const btn = slide.querySelector('.slide-btn');
+        if (btn) {
+            btn.addEventListener('click', () => {
+                clearInterval(slideInterval); // stop l'auto-slide si nécessaire
+            });
+        }
+    });
+
     showSlide(currentSlide);
 
     // Exposer changeSlide globalement pour flèches
