@@ -580,6 +580,7 @@ footer {
     color: white;
     display: flex;
     justify-content: space-between;
+    position: sticky;
 }
 
 footer img {
