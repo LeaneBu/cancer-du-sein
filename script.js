@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3>${person.name}</h3>
                             <p>${person.profession}</p>
                             <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
-                            <p>Téléphone: <a href="tel:${person.phone}">${person.phone}</a></p>
+                            <p>Tél: <a href="tel:${person.phone}">${person.phone}</a></p>
                         </div>
                     `;
                     cardsContainer.appendChild(card);
