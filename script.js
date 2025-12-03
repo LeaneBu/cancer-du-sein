@@ -121,38 +121,42 @@ if (prochainEventSection) {
       });
 }
 
-const intervenantsGrid = document.getElementById("intervenants-grid");
+document.addEventListener('DOMContentLoaded', () => {
+    const intervenantsGrid = document.getElementById("intervenants-grid");
 
-fetch('intervenants.json')
-    .then(res => res.json())
-    .then(data => {
-        // Trier par profession
-        const professions = {};
-        data.forEach(intervenant => {
-            if (!professions[intervenant.profession]) professions[intervenant.profession] = [];
-            professions[intervenant.profession].push(intervenant);
-        });
+    if(!intervenantsGrid) return; // sécurité
 
-        // Générer HTML par profession
-        for (const prof in professions) {
-            const sectionTitle = document.createElement("h3");
-            sectionTitle.textContent = prof;
-            intervenantsGrid.appendChild(sectionTitle);
-
-            professions[prof].forEach(person => {
-                const card = document.createElement("div");
-                card.className = "intervenant-card";
-                card.innerHTML = `
-                    <img src="${person.photo}" alt="${person.name}">
-                    <div class="intervenant-info">
-                        <h3>${person.name}</h3>
-                        <p>${person.profession}</p>
-                        <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
-                        <p>Téléphone: <a href="tel:${person.phone}">${person.phone}</a></p>
-                    </div>
-                `;
-                intervenantsGrid.appendChild(card);
+    fetch('intervenants.json')
+        .then(res => res.json())
+        .then(data => {
+            // Trier par profession
+            const professions = {};
+            data.forEach(intervenant => {
+                if (!professions[intervenant.profession]) professions[intervenant.profession] = [];
+                professions[intervenant.profession].push(intervenant);
             });
-        }
-    })
-    .catch(err => console.error("Erreur chargement JSON:", err));
+
+            // Générer HTML par profession
+            for (const prof in professions) {
+                const sectionTitle = document.createElement("h3");
+                sectionTitle.textContent = prof;
+                intervenantsGrid.appendChild(sectionTitle);
+
+                professions[prof].forEach(person => {
+                    const card = document.createElement("div");
+                    card.className = "intervenant-card";
+                    card.innerHTML = `
+                        <img src="${person.photo}" alt="${person.name}">
+                        <div class="intervenant-info">
+                            <h3>${person.name}</h3>
+                            <p>${person.profession}</p>
+                            <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
+                            <p>Téléphone: <a href="tel:${person.phone}">${person.phone}</a></p>
+                        </div>
+                    `;
+                    intervenantsGrid.appendChild(card);
+                });
+            }
+        })
+        .catch(err => console.error("Erreur chargement JSON:", err));
+});
